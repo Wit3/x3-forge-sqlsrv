@@ -21,9 +21,9 @@ Route::get('/', function () {
 Route::get('sqlsrv', function () {
     
 
-    $fatture = DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] ');
+    //$fatture = DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] ');
 
-    dd($fatture);
+    //dd($fatture);
 });
 
 
