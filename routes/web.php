@@ -25,3 +25,10 @@ Route::get('sqlsrv', function () {
 
     dd($statement);
 });
+
+
+
+Route::get('users', function () {
+    $users = DB::connection('pgsql')->statement('select * from users');
+    dd($users);
+});
