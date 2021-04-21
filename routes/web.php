@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 Route::get('sqlsrv', function () {
     
-    $fatture = collect(DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] '));
+    // $fatture = collect(DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] '));
 
-    $firstTestata =  $fatture->first();
+    // $firstTestata =  $fatture->first();
 
-    dd($firstTestata);
+    // dd($firstTestata);
 });
 
 Route::get('inspire', function () {
