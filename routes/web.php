@@ -29,7 +29,7 @@ Route::get('sqlsrv', function () {
 
 Route::get('inspire', function () {
     
-    echo "Yo";
+    echo "Yos";
 
 });
 
