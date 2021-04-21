@@ -24,7 +24,7 @@ Route::get('sqlsrv', function () {
 
     $firstTestata =  $fatture->first();
 
-    //dd($fatture);
+    dd($firstTestata);
 });
 
 Route::get('inspire', function () {
