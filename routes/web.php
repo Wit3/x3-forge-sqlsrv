@@ -29,11 +29,8 @@ Route::get('sqlsrv', function () {
 
 Route::get('inspire', function () {
     
-
     echo "Yo";
-    //$fatture = DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] ');
 
-    //dd($fatture);
 });
 
 
