@@ -22,7 +22,7 @@ Route::get('sqlsrv', function () {
     
     $fatture = collect(DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] '));
 
-    echo $fatture->first()->fornitore;
+    $firstTestata =  $fatture->first();
 
     //dd($fatture);
 });
