@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,27 +12,25 @@ use Illuminate\Support\Facades\DB;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('sqlsrv', function () {
-    
-    // $fatture = collect(DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] '));
 
-    // $firstTestata =  $fatture->first();
+    $fatture = collect(DB::connection('sqlsrv')->select('select * from [billoo].[Fatture_Testata] '));
 
-    // dd($firstTestata);
+    $firstTestata = $fatture->first();
+
+    dd($firstTestata);
 });
 
 Route::get('inspire', function () {
-    
+
     echo "Yos12 - staging";
-
 });
-
 
 Route::get('users', function () {
     $users = DB::connection('pgsql')->statement('select * from users');

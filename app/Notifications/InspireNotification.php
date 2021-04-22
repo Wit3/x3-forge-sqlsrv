@@ -5,21 +5,22 @@ namespace App\Notifications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 use Illuminate\Notifications\Messages\SlackMessage;
+use Illuminate\Notifications\Notification;
 
 class InspireNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public $quote;
+    /** @var string */
+    public string $quote;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($quote)
+    public function __construct(string $quote)
     {
         $this->quote = $quote;
     }
@@ -61,12 +62,11 @@ class InspireNotification extends Notification implements ShouldQueue
             ->line('Thank you for using our application!');
     }
 
-
     /**
      * Get the Slack representation of the notification.
      *
      * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Message\SlackMessage
+     * @return \Illuminate\Notifications\Messages\SlackMessage
      */
     public function toSlack($notifiable)
     {

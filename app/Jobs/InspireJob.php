@@ -2,14 +2,13 @@
 
 namespace App\Jobs;
 
+use App\Models\User;
+use App\Notifications\InspireNotification;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
-use App\Notifications\InspireNotification;
 use Illuminate\Support\Facades\Artisan;
 
 class InspireJob implements ShouldQueue
@@ -34,7 +33,7 @@ class InspireJob implements ShouldQueue
     public function handle()
     {
         $user = User::findOrFail(2);
-        
+
         Artisan::call('inspire');
         $quote = Artisan::output();
         $user->notify(new InspireNotification($quote));
